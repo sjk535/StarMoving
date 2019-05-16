@@ -19,13 +19,13 @@ public class StarMain {
 		
 		Space s = new Space(5, '.');  //최소 5
 		Wall w = new Wall(3);
-		Charactor c = new Charactor('@');
+		Character c = new Character('@');
 
 		Scanner sc = new Scanner(System.in);
 		int key = 0;
-		String Ann1 = "위:8, 아래:2, 왼쪽:4, 오른쪽:6, 종료:0";
-		String Ann2 = "<벽입니다. 다시입력하세요.>\n 위:8, 아래:2, 왼쪽:4, 오른쪽:6, 종료:0";
-		String Ann = Ann1;
+		String ann1 = "위:8, 아래:2, 왼쪽:4, 오른쪽:6, 종료:0";
+		String ann2 = "<벽입니다. 다시입력하세요.>\n 위:8, 아래:2, 왼쪽:4, 오른쪽:6, 종료:0";
+		String ann = ann1;
 	
 		do {
 			s.SpaceIni();
@@ -33,13 +33,13 @@ public class StarMain {
 			c.Star1();						
 
 			Print();
-			System.out.println(Ann);
+			System.out.println(ann);
 			System.out.println();
-			Ann=Ann1;    //매회 여기까지 진행후 멈춤(input 대기) 
+			ann=ann1;    //매회 여기까지 진행후 멈춤(input 대기) 
 			
 			key=sc.nextInt();
-			char AnnCR=c.Star(key);
-			if (AnnCR=='R') Ann=Ann2;
+			char annChk=c.Star(key);
+			if (annChk=='R') ann=ann2;
 					
 		} while (key != 0);
 		sc.close();
